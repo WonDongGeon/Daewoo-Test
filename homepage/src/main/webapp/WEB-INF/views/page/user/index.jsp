@@ -67,20 +67,30 @@
     <a href="#" class="nav-link d-inline">게시판</a>
 </nav>
 
-<!-- 로그인/회원가입 폼이 로드될 세션 영역 -->
 <div id="session-area" class="container mt-4 ps-4"></div>
-
-<!-- 메인 콘텐츠 -->
-<div class="container-fluid ms-5 mt-4 ps-4">
-        <div class="col-md-10" id="content-area">
-            <h4>메인 콘텐츠</h4>
-            <p>여기에 메인 콘텐츠가 들어갑니다.</p>
-        </div>
-</div>
 
 <!-- 푸터 -->
 <div class="footer">
     © 2025 회사명. All rights reserved.
 </div>
+<script>
+$(document).ready(function() {
+	  $.get("/api/posts")
+	    .done(function(data) {
+	      console.log(data);
+	      let html = "<h4>게시글 목록</h4><table class='table'>";
+	      html += "<tr><th>ID</th><th>제목</th><th>내용</th></tr>";
+	      data.forEach(post => {
+	        html += `<tr><td>${post.id}</td><td>${post.title}</td><td>${post.body}</td></tr>`;
+	      });
+	      html += "</table>";
+	      $("#session-area").html(html);
+	    })
+	    .fail(function(xhr, status, error) {
+	      console.error("게시글 로드 실패:", status, error);
+	      $("#session-area").html("<p>게시글을 불러오는데 실패했습니다.</p>");
+	    });
+	});
+</script>
 </body>
 </html>
