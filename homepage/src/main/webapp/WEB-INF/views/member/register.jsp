@@ -91,13 +91,12 @@ document.querySelector('.check-btn').addEventListener('click', function() {
 
 document.getElementById('register-form').addEventListener('submit', function(event) {
     var pwd = document.getElementById('password').value;
-    var pwdConfirm = document.getElementById('passwordConfirm').value;
+    var pwdConfirm = document.getElementById('confirmPassword').value; // <-- id 수정
 
     if (pwd !== pwdConfirm) {
         alert('비밀번호가 일치하지 않습니다. 다시 입력해주세요.');
         event.preventDefault();  // 폼 제출 막기
         document.getElementById('password').focus();
-        return false;
     }
 });
 </script>
