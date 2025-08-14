@@ -96,21 +96,6 @@ http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
   <servlet-name>page-dispatcher</servlet-name>
   <url-pattern>/</url-pattern> 
   </servlet-mapping>
-  
-  <servlet>
-  <servlet-name>restapi-dispatcher</servlet-name>
-  <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-  <init-param>
-   <param-name>contextConfigLocation</param-name>
-   <param-value>/WEB-INF/config/restapi-servlet.xml</param-value>
-  </init-param>
-  <load-on-startup>1</load-on-startup>
-</servlet>
-  
-  <servlet-mapping>
-  <servlet-name>restapi-dispatcher</servlet-name>
-  <url-pattern>/restapi/*</url-pattern> 
-  </servlet-mapping>
 
 <!-- 404에러 발생시 web.xml에 error-page등록 -->
 <error-page>

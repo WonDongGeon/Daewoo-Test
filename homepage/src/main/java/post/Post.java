@@ -1,4 +1,4 @@
-package restapi;
+package post;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

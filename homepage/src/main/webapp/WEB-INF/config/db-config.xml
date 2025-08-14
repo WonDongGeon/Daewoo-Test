@@ -6,5 +6,5 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
 <bean id="memberService" class ="member.MemberService"></bean>
-
+<bean id="postService" class = "post.PostService"></bean>
 </beans>

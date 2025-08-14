@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="post.PostMapper">
+
+<insert id="save" parameterType="post.Post">
+insert into member(userid, title, body) values(#{userid},#{title},#{body})
+</insert>
+<select id="findAll" resultType="post.Post">
+SELECT userid, title, body FROM posts
+</select>
+</mapper>
